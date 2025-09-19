@@ -13,7 +13,7 @@ from reytools.exception import CustomException
 
 
 @ensure_annotations
-def read_yaml(path_to_yaml: Path) -> ConfigBox:
+def read_yaml(path_to_yaml: Path, verbose=True) -> ConfigBox:
     """reads yaml file and returns
 
     Args:
@@ -29,7 +29,8 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     try:
         with open(path_to_yaml) as yaml_file:
             content = yaml.safe_load(yaml_file)
-            logging.info(f"yaml file: {path_to_yaml} loaded successfully")
+            if verbose:
+                logging.info(f"yaml file: {path_to_yaml} loaded successfully")
             return ConfigBox(content)
     except Exception as e:
         raise CustomException(e, sys)
