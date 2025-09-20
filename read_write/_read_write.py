@@ -47,7 +47,7 @@ def write_json(path: Path, data: dict, verbos=True):
     with open(path, "w") as f:
         json.dump(data, f, indent=4)
     if verbos:
-        logging.info(f"json file saved at: {path}")
+        logging.info(f"json data saved to: {path}")
 
 
 @ensure_annotations

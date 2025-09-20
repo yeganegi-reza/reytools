@@ -18,7 +18,7 @@ def create_directories(path_to_directories: list, verbose=True):
         if not os.path.exists(path):
             os.makedirs(path, exist_ok=True)
             if verbose:
-                logging.info(f"created directory at: {path}")
+                logging.info(f"Created directory at: {path}")
         else:
             if verbose:
                 logging.info(f"Path: {path} already exists")
