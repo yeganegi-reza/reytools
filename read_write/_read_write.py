@@ -2,6 +2,7 @@ import sys
 import yaml
 import json
 import dill
+import base64
 
 from typing import Any
 from pathlib import Path
@@ -94,3 +95,15 @@ def read_bin(path: Path, verbose=True) -> Any:
     if verbose:
         logging.info(f"binary file loaded from: {path}")
     return data
+
+
+def decodeImage(imgstring, fileName):
+    imgdata = base64.b64decode(imgstring)
+    with open(fileName, 'wb') as f:
+        f.write(imgdata)
+        f.close()
+
+
+def encodeImageIntoBase64(croppedImagePath):
+    with open(croppedImagePath, "rb") as f:
+        return base64.b64encode(f.read())
