@@ -1,9 +1,9 @@
+tensorflow
 setuptools
-dill
 pyyaml
 pytest
-ensure==1.0.2
-python-box==6.0.2
+ensure
+python-box
+dill
 pathlib
-json
-zipfile
+-e .

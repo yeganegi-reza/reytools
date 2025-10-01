@@ -5,8 +5,8 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "reylearn"
-SRC_REPO = "reylearn"
+REPO_NAME = "reytools"
+SRC_REPO = "reytools"
 
 AUTHOR_USER_NAME = "yeganegi-reza"
 AUTHOR_EMAIL = "yeganegi.reza@gmail.com"
@@ -23,6 +23,6 @@ setuptools.setup(
     project_urls={
         "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
     },
-    package_dir={"": ""},
+    package_dir={"": "."},
     packages=setuptools.find_packages(where="."),
 )
