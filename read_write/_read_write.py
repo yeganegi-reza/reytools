@@ -51,6 +51,19 @@ def write_json(path: Path, data: dict, verbos=True):
         logging.info(f"json data saved to: {path}")
 
 
+def write_binary(path: Path, data, verbos=True):
+    """write a data as binary file 
+
+    Args:
+        path (Path): path to save the data
+        data : data to be saved in the path
+    """
+    with open(path, "wb") as f:
+        f.write(data)
+    if verbos:
+        logging.info(f"Data saved as binary to: {path}")
+
+
 @ensure_annotations
 def read_json(path: Path, verbose=True) -> ConfigBox:
     """load json files data
@@ -99,7 +112,7 @@ def read_bin(path: Path, verbose=True) -> Any:
 
 def decodeImage(imgstring, fileName):
     imgdata = base64.b64decode(imgstring)
-    with open(fileName, 'wb') as f:
+    with open(fileName, "wb") as f:
         f.write(imgdata)
         f.close()
 
